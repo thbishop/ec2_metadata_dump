@@ -10,7 +10,7 @@ import "strings"
 func getData(url string) (data []string) {
 	resp, err := http.Get(url)
 	if err != nil {
-		fmt.Printf("Error: %v\n", err)
+		os.Stderr.Write([]byte("Error: " + err.Error()))
 		os.Exit(1)
 	}
 
@@ -55,7 +55,7 @@ func main() {
 
 	jsonData, err := json.MarshalIndent(crawlData(url), "", "    ")
 	if err != nil {
-		fmt.Printf("Error: %v\n", err)
+		os.Stderr.Write([]byte("Error: " + err.Error()))
 		os.Exit(1)
 	}
 
