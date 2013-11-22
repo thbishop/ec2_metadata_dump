@@ -4,7 +4,7 @@ EC2 metadata dump is a tool to grab the data from the [EC2 metadata service](htt
 
 ## Quick Start
 
-First, download a pre-built binary here.
+First, download a pre-built binary from the desired [release](https://github.com/thbishop/ec2_metadata_dump/releases).
 
 You can then dump the data with:
 
