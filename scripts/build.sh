@@ -15,20 +15,10 @@ cd $DIR
 GIT_COMMIT=$(git rev-parse HEAD)
 GIT_DIRTY=$(test -n "`git status --porcelain`" && echo "+CHANGES" || true)
 
-# If we're building on Windows, specify an extension
-EXTENSION=""
-if [ "$(go env GOOS)" = "windows" ]; then
-    EXTENSION=".exe"
-fi
-
-# Install dependencies
-echo "--> Installing dependencies to speed up builds..."
-go get ./...
-
 # Build!
 echo "--> Building..."
 go build \
     -ldflags "-X main.GitCommit ${GIT_COMMIT}${GIT_DIRTY}" \
     -v \
-    -o bin/ec2_metadata_dump${EXTENSION}
-cp bin/ec2_metadata_dump${EXTENSION} $GOPATH/bin
+    -o bin/ec2_metadata_dump
+cp bin/ec2_metadata_dump $GOPATH/bin
