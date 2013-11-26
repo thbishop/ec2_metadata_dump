@@ -50,15 +50,18 @@ func crawlData(url string) map[string]interface{} {
 	return data
 }
 
-func main() {
-	url := "http://169.254.169.254/latest/"
-
-	jsonData, err := json.MarshalIndent(crawlData(url), "", "    ")
+func jsonData(url string) string {
+	data, err := json.MarshalIndent(crawlData(url), "", "    ")
 	if err != nil {
 		os.Stderr.Write([]byte("Error: " + err.Error()))
 		os.Exit(1)
 	}
+	return string(data)
+}
 
-	os.Stdout.Write(jsonData)
+func main() {
+	url := "http://169.254.169.254/latest/"
+
+	os.Stdout.WriteString(jsonData(url))
 	fmt.Println("")
 }
