@@ -1,11 +1,13 @@
 package main
 
-import "bufio"
-import "fmt"
-import "encoding/json"
-import "net/http"
-import "os"
-import "strings"
+import (
+	"bufio"
+	"encoding/json"
+	"fmt"
+	"net/http"
+	"os"
+	"strings"
+)
 
 func getData(url string) (data []string) {
 	resp, err := http.Get(url)
