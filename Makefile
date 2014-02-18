@@ -18,6 +18,6 @@ package:
 	@bash --norc -i ./scripts/dist.sh
 
 test:
-	go list ./... | xargs -n1 go test
+	go test -v ./...
 
 .PNONY: all fmt help package test
