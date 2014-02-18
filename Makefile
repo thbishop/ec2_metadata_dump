@@ -1,4 +1,6 @@
 all: fmt test
+
+build: fmt test
 	@mkdir -p bin/
 	@bash --norc -i ./scripts/build.sh
 
