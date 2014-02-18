@@ -1,6 +1,10 @@
 # EC2 Metadata Dump
 
+
 EC2 metadata dump is a tool to grab the data from the [EC2 metadata service](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html) and output it as json.
+
+[![Build Status](https://travis-ci.org/thbishop/ec2_metadata_dump.png?branch=master)](https://travis-ci.org/thbishop/ec2_metadata_dump)
+
 
 ## Quick Start
 
